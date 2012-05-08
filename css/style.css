@@ -179,12 +179,17 @@ a:hover { color: #036; }
 .costtable td {
 	padding: .5em;
 }
+
+.costtable a, a:hover, a:visited {text-decoration:none; font-weight:400;}
  
 .boldcell { 
 	font-weight: 700;
 }
 
-
+.more-info {
+	display: none;
+	font-weight: 400;
+	}
 
 
 
