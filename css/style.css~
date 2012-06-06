@@ -191,9 +191,6 @@ a:hover { color: #036; }
 	font-weight: 400;
 	}
 
-.readonly {
-	background: #ffc;
-	}
 
 
 

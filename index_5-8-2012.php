@@ -123,9 +123,6 @@ function cmdCalc_Click3(form)
     else if (form.T3Software.value == 0 || form.T3Software.value.length == 0) {
         alert ("The Software cost can't be 0!");
         form.T3Software.focus(); }
-    else if (form.T3TotalNumberOfPages.value == 0 || form.T3TotalNumberOfPages.value.length == 0) {
-        alert ("The Total Number of Pages can't be 0!");
-        form.T3TotalNumberOfPages.focus(); }
     else
         calculatePayment3(form);
 }
@@ -140,7 +137,7 @@ function calculatePayment3(form)
 	b=form.T3NumberOfMonthsInStage.value;
 	form.T3TotalNumberOfHours.value = a*b;	
 	
-	e=form.T3Total.value;
+	e=form.T3CostForProcessing.value;
 	f=form.T3TotalNumberOfPages.value;
 	form.T3CostPerPageProcessed.value = e/f;
 	
@@ -179,15 +176,6 @@ function calculatePayment4(form)
 }
 
 function cmdCalc_Click5(form)
-{
-    if (form.T3TotalNumberOfPages.value == 0 || form.T3TotalNumberOfPages.value.length == 0) {
-        alert ("The Total Number of Pages in the Processing section can't be 0!");
-        form.T3TotalNumberOfPages.focus(); } 
-    else
-        calculatePayment5(form);
-}
-
-function calculatePayment5(form)
 {
 	a=form.T1Total.value * 1;
 	b=form.T2Total.value * 1;
@@ -245,9 +233,9 @@ function CommaFormatted(amount) {
 <body>
 
   <div id="container">
-    <!--<header>
+    <header>
 	<h3>Header (Cost Calculator)</h3>
-    </header>-->
+    </header>
     <div id="main" role="main">
 	<h2>Cost Calculator</h2>
 	
@@ -255,20 +243,19 @@ function CommaFormatted(amount) {
 	
 <!-- PROJECT PLANNING -->
 	
-<form name="costcalc">
-	
-	<table class="costtable" width="740px">
+	<form name="T1Calculator">
+	<table class="costtable info-blurb">
 	<tr>
-		<td class="boldcell" width="60%">Project Planning
+		<td class="boldcell">Project Planning
 		</td>
-		<td class="boldcell" width="15%">Metrics
+		<td class="boldcell">Metrics
 		</td>
-		<td width="25%">&nbsp;
+		<td>
 		</td>
 	</tr>
 	<tr>
 		<td>Hardware Costs (Equipment, Storage, etc) <a href="" onclick="show('info-hardware'); return false;">[?]</a>
-		<div id="info-hardware" class="more-info">Equipment, Disk Storage, Hardware needed for this phase of the project.</div>
+		<div id="info-hardware" style="display:none;">Equipment, Disk Storage, Hardware needed for this phase of the project.</div>
 		</td>
 		<td><!-- TBD -->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T1Hardware" value="" size="4">
@@ -278,7 +265,7 @@ function CommaFormatted(amount) {
 	</tr>
 	<tr>
 		<td>Software Costs <a href="" onclick="show('info-software'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-software" class="more-info">The cost of software programs needed for this phase of the project</div>
+		<div id="info-software" style="display:none;">The cost of software programs needed for this phase of the project</div>
 		</td>
 		<td><!-- TBD -->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T1Software" value="" size="4">
@@ -288,7 +275,7 @@ function CommaFormatted(amount) {
 	</tr>
 	<tr>
 		<td>Number of 'Resources <a href="" onclick="show('info-resource-number'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-resource-number" class="more-info">The total number of unique resources (or persons) used for this phase of the project.</div>
+		<div id="info-resource-number" style="display:none;">The total number of unique resources (or persons) used for this phase of the project.</div>
 		</td>
 		<td><!--23-->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T1NumberOfResources" value="" size="4">
@@ -297,28 +284,28 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td class="boldcell">Total Number of Hours <a href="" onclick="show('info-hours-number'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-hours-number" class="more-info">The total number of hours worked by the resources. This is calculate by multiplying the Total Hours per Month by the Number of Months in Stage.</div>
+		<td>Total Number of Hours <a href="" onclick="show('info-hours-number'); return false;"><span class="info-blurb">[?]</span></a>
+		<div id="info-hours-number" style="display:none;">The total number of hours worked by the resources. This is calculate by multiplying the Total Hours per Month by the Number of Months in Stage.</div>
 		</td>
-		<td class="boldcell"><!--8,745-->
-			<input type="number" autocorrect="off" autocapitalize="off" name="T1NumberOfHours" value="" size="4" readonly="readonly" class="readonly">
+		<td><!--8,745-->
+			<input type="number" autocorrect="off" autocapitalize="off" name="T1NumberOfHours" value="" size="4" readonly="readonly" >
 		</td>
 		<td>
 		</td>
 	</tr>
 	<tr>
-		<td class="boldcell">'Resource' Cost <a href="" onclick="show('info-resource-cost'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-resource-cost" class="more-info">The total cost of resources for this phase of the project. This is calculated by multiplying the Hourly Rate for Resources by the Total Number of Hours.</div>
+		<td>'Resource' Cost <a href="" onclick="show('info-resource-cost'); return false;"><span class="info-blurb">[?]</span></a>
+		<div id="info-resource-cost" style="display:none;">The total cost of resources for this phase of the project. This is calculated by multiplying the Hourly Rate for Resources by the Total Number of Hours.</div>
 		</td>
-		<td class="boldcell"><!--$309,550.09-->
-		<input type="number" autocorrect="off" autocapitalize="off" name="T1ResourceCost" value="" size="4" readonly="readonly" class="readonly">
+		<td><!--$309,550.09-->
+		<input type="number" autocorrect="off" autocapitalize="off" name="T1ResourceCost" value="" size="4" readonly="readonly">
 		</td>
 		<td>
 		</td>
 	</tr>
 	<tr>
 		<td>Total Hours per Month <a href="" onclick="show('info-total-hours'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-total-hours" class="more-info">The total number of hours worked by the resources each month for this phase of the project.</div>
+		<div id="info-total-hours" style="display:none;">The total number of hours worked by the resources each month for this phase of the project.</div>
 		</td>
 		<td><!--1,221-->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T1TotalHours" value="" size="4">			
@@ -328,17 +315,17 @@ function CommaFormatted(amount) {
 	</tr>
 	<tr>
 		<td>Number of Months in Stage <a href="" onclick="show('info-months'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-months" class="more-info">The total number of months in this phase of the project.</div>
+		<div id="info-months" style="display:none;">The total number of months in this phase of the project.</div>
 		</td>
 		<td><!--28-->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T1NumberOfMonths" value="" size="4">
 		</td>
-		<td>
+		<td>Based on Salary Report
 		</td>
 	</tr>
 	<tr>
 		<td>Hourly Rate for 'Resources' <a href="" onclick="show('info-resources-hourly'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-resources-hourly" class="more-info">The average hourly rate for the resources in this phase of the project.</div>
+		<div id="info-resources-hourly" style="display:none;">The average hourly rate for the resources in this phase of the project.</div>
 		</td>
 		<td><!--$35.40-->
 			<input type="number" autocorrect="off" autocapitalize="off" name="T1HourlyRate" value="" size="4">
@@ -348,10 +335,10 @@ function CommaFormatted(amount) {
 	</tr>
 	<tr>
 		<td class="boldcell">Cost for Project Planning <a href="" onclick="show('info-costs-planning'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-costs-planning" class="more-info">The total cost of the project. This is a sum of the Hardware costs, Software costs, and Resource costs.</div>
+		<div id="info-costs-planning" style="display:none;">The total cost of the project. This is a sum of the Hardware costs, Software costs, and Resource costs.</div>
 		</td>
 		<td class="boldcell"><!--$309,550.09-->
-			<input type="number" autocorrect="off" autocapitalize="off" name="T1Total" value="" size="4" readonly="readonly" class="readonly">
+			<input type="number" autocorrect="off" autocapitalize="off" name="T1Total" value="" size="7" readonly="readonly">
 		</td>
 		<td>
 		</td>
@@ -363,36 +350,36 @@ function CommaFormatted(amount) {
 			NAME="cmdCalc" 
 			VALUE="Calculate"
 			onClick=cmdCalc_Click(form)>	
-	<!--</form>-->
+	</form>
 	
 	<p>&nbsp;</p>
 	
 
 <!-- SCANNING -->	
 	
-	<!--<form name="scanning">-->
-	<table class="costtable" width="740px">
+	<form name="scanning">
+	<table class="costtable">
 	<tr>
-		<td class="boldcell" width="60%">Scanning
+		<td class="boldcell">Scanning
 		</td>
-		<td class="boldcell" width="15%">Metrics
-		</td>
-		<td width="25%">&nbsp;
-		</td>
-	</tr>
-	<tr>
-		<td>Hardware Costs (Equipment, Storage, etc) <a href="" onclick="show('info-costs-t2hardware'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-costs-t2hardware" class="more-info">Equipment, Disk Storage, Hardware needed for this phase of the project.</div>
-		</td>
-		<td><!--$369,084.11-->
-		<input type="number" autocorrect="off" autocapitalize="off" name="T2Hardware" value="" size="4">
+		<td class="boldcell">Metrics
 		</td>
 		<td>
 		</td>
 	</tr>
 	<tr>
+		<td>Hardware Costs (Equipment, Storage, etc) <a href="" onclick="show('info-costs-t2hardware'); return false;"><span class="info-blurb">[?]</span></a>
+		<div id="info-costs-t2hardware" style="display:none;">Equipment, Disk Storage, Hardware needed for this phase of the project.</div>
+		</td>
+		<td><!--$369,084.11-->
+		<input type="number" autocorrect="off" autocapitalize="off" name="T2Hardware" value="" size="4">
+		</td>
+		<td>Based on Grant Budget
+		</td>
+	</tr>
+	<tr>
 		<td>Software Costs  <a href="" onclick="show('info-costs-t2software'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-costs-t2software" class="more-info">The cost of software programs needed for this phase of the project.</div>
+		<div id="info-costs-t2software" style="display:none;">The cost of software programs needed for this phase of the project.</div>
 		</td>
 		<td><!-- n/a -->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T2Software" value="" size="4">
@@ -402,7 +389,7 @@ function CommaFormatted(amount) {
 	</tr>
 	<tr>
 		<td>Number of 'Resources' <a href="" onclick="show('info-t2resources'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-t2resources" class="more-info">The total number of unique resources (or persons) used for this phase of the project.</div>
+		<div id="info-t2resources" style="display:none;">The total number of unique resources (or persons) used for this phase of the project.</div>
 		</td>
 		<td><!--3-->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T2NumberOfResources" value="" size="4">
@@ -411,28 +398,28 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td class="boldcell">Total Number of Hours <a href="" onclick="show('info-t2hours'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-t2hours" class="more-info">The total number of hours worked by the resources. This is calculate by multiplying the Total Hours per Month by the Number of Months in Stage.</div>
+		<td>Total Number of Hours <a href="" onclick="show('info-t2hours'); return false;"><span class="info-blurb">[?]</span></a>
+		<div id="info-t2hours" style="display:none;">The total number of hours worked by the resources. This is calculate by multiplying the Total Hours per Month by the Number of Months in Stage.</div>
 		</td>
-		<td class="boldcell"><!--2,400-->
-		<input type="number" autocorrect="off" autocapitalize="off" name="T2NumberOfHours" value="" size="4" readonly="readonly" class="readonly">
+		<td><!--2,400-->
+		<input type="number" autocorrect="off" autocapitalize="off" name="T2NumberOfHours" value="" size="4" readonly="readonly">
 		</td>
 		<td>
 		</td>
 	</tr>
 	<tr>
-		<td class="boldcell">'Resource' Cost <a href="" onclick="show('info-costs-t2resources'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-costs-t2resources" class="more-info">The total cost of resources for this phase of the project. This is calculated by multiplying the Hourly Rate for Resources by the Total Number of Hours.</div>
+		<td>'Resource' Cost <a href="" onclick="show('info-costs-t2resources'); return false;"><span class="info-blurb">[?]</span></a>
+		<div id="info-costs-t2resources" style="display:none;">The total cost of resources for this phase of the project. This is calculated by multiplying the Hourly Rate for Resources by the Total Number of Hours.</div>
 		</td>
-		<td class="boldcell"><!--$39,936.00-->
-		<input type="number" autocorrect="off" autocapitalize="off" name="T2ResourceCost" value="" size="4" readonly="readonly" class="readonly">
+		<td><!--$39,936.00-->
+		<input type="number" autocorrect="off" autocapitalize="off" name="T2ResourceCost" value="" size="4" readonly="readonly">
 		</td>
 		<td>
 		</td>
 	</tr>
 	<tr>
 		<td>Total Hours per Month <a href="" onclick="show('info-total-t2hours'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-total-t2hours" class="more-info">The total number of hours worked by the resources each month for this phase of the project.</div>
+		<div id="info-total-t2hours" style="display:none;">The total number of hours worked by the resources each month for this phase of the project.</div>
 		</td>
 		<td><!--480.00-->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T2TotalHours" value="" size="4">
@@ -442,17 +429,17 @@ function CommaFormatted(amount) {
 	</tr>
 	<tr>
 		<td>Number of Months in Stage <a href="" onclick="show('info-t2months'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-t2months" class="more-info">The total number of months in this phase of the project.</div>
+		<div id="info-t2months" style="display:none;">The total number of months in this phase of the project.</div>
 		</td>
 		<td><!--17-->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T2NumberOfMonths" value="" size="4">
 		</td>
-		<td>
+		<td>Based on Salary Report
 		</td>
 	</tr>
 	<tr>
 		<td>Hourly Rate for 'Resources' <a href="" onclick="show('info-rate-t2resources'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-rate-t2resources" class="more-info">The average hourly rate for the resources in this phase of the project.</div>
+		<div id="info-rate-t2resources" style="display:none;">The average hourly rate for the resources in this phase of the project.</div>
 		</td>
 		<td><!--$16.64-->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T2HourlyRate" value="" size="4">
@@ -463,60 +450,60 @@ function CommaFormatted(amount) {
 	
 	<tr>
 		<td>Number of Hours Scanning per day <a href="" onclick="show('info-hours-t2scanning'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-hours-t2scanning" class="more-info">The number of hours spent each day on scanning books. This may be based on scan production reports provided by your scanning equipment.</div>
+		<div id="info-hours-t2scanning" style="display:none;">The number of hours spent each day on scanning books. This may be based on scan production reports provided by your scanning equipment.</div>
 		</td>
 		<td><!--8-->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T2HoursScanning" value="" size="4">
 		</td>
-		<td>
+		<td>Based on Scan Production report
 		</td>
 	</tr>	
 	<tr>
 		<td>Pages Scanned per Hour per Operator <a href="" onclick="show('info-t2perhour'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-t2perhour" class="more-info">The number of pages scanned each hour. This may be based on scan production reports provided by your scanning equipment.</div>
+		<div id="info-t2perhour" style="display:none;">The number of pages scanned each hour. This may be based on scan production reports provided by your scanning equipment.</div>
 		</td>
 		<td><!--592.59-->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T2PagesScanned" value="" size="4">
 		</td>
-		<td>
+		<td>Based on Scan Production report
 		</td>
 	</tr>
 	<tr>
 		<td>Average Book Size <a href="" onclick="show('info-t2booksize'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-t2booksize" class="more-info">The average size of the scanned books. This may be based on scan production reports provided by your scanning equipment.</div>
+		<div id="info-t2booksize" style="display:none;">The average size of the scanned books. This may be based on scan production reports provided by your scanning equipment.</div>
 		</td>
 		<td><!--400-->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T2BookSize" value="" size="4">
 		</td>
-		<td>
+		<td>Based on Scan Production report
 		</td>
 	</tr>
 	<tr>
-		<td class="boldcell">Books Scanned per Hour per Operator <a href="" onclick="show('info-t2perop'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-t2perop" class="more-info"> The number of books scanned each hour. This is calculated by dividing the Pages Scanned per Hour per Operator by the Average Book Size.</div>
+		<td>Books Scanned per Hour per Operator <a href="" onclick="show('info-t2perop'); return false;"><span class="info-blurb">[?]</span></a>
+		<div id="info-t2perop" style="display:none;"> The number of books scanned each hour. This is calculated by dividing the Pages Scanned per Hour per Operator by the Average Book Size.</div>
 		</td>
-		<td class="boldcell"><!--1.48-->
-		<input type="number" autocorrect="off" autocapitalize="off" name="T2BooksScanned" value="" size="4" readonly="readonly" class="readonly">
+		<td><!--1.48-->
+		<input type="number" autocorrect="off" autocapitalize="off" name="T2BooksScanned" value="" size="4" readonly="readonly">
 		</td>
 		<td>
 		</td>
 	</tr>	
 	<tr>
-		<td class="boldcell">Books Scanned per Day <a href="" onclick="show('info-t2booksperday'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-t2booksperday" class="more-info">The number of books scanned each day. This is calculated by multiplying the Books Scanned per Hour per Operator by the Number of Hours Scanning per Day. The resulting number is then multiplied by the Number of Resources for this phase of the project.</div>
+		<td>Books Scanned per Day <a href="" onclick="show('info-t2booksperday'); return false;"><span class="info-blurb">[?]</span></a>
+		<div id="info-t2booksperday" style="display:none;">The number of books scanned each day. This is calculated by multiplying the Books Scanned per Hour per Operator by the Number of Hours Scanning per Day. The resulting number is then multiplied by the Number of Resources for this phase of the project.</div>
 		</td>
-		<td class="boldcell"><!--35.56-->
-		<input type="number" autocorrect="off" autocapitalize="off" name="T2BooksDay" value="" size="4" readonly="readonly" class="readonly">
+		<td><!--35.56-->
+		<input type="number" autocorrect="off" autocapitalize="off" name="T2BooksDay" value="" size="4" readonly="readonly">
 		</td>
 		<td>
 		</td>
 	</tr>
 	<tr>
-		<td class="boldcell">Cost per Book scanned <a href="" onclick="show('info-t2costperbook'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-t2costperbook" class="more-info">The cost of scanning each book during this phase of the project. This is calculated by multiplying Books Scanned per Day times the Number of Resources. The resulting number is then divided by Books Scanned per Hour per Operator.</div>
+		<td>Cost per Book scanned <a href="" onclick="show('info-t2costperbook'); return false;"><span class="info-blurb">[?]</span></a>
+		<div id="info-t2costperbook" style="display:none;">The cost of scanning each book during this phase of the project. This is calculated by multiplying Books Scanned per Day times the Number of Resources. The resulting number is then divided by Books Scanned per Hour per Operator.</div>
 		</td>
-		<td class="boldcell"><!--72.00-->
-		<input type="number" autocorrect="off" autocapitalize="off" name="T2CostPerBook" value="" size="4" readonly="readonly" class="readonly">
+		<td><!--72.00-->
+		<input type="number" autocorrect="off" autocapitalize="off" name="T2CostPerBook" value="" size="4" readonly="readonly">
 		</td>
 		<td>
 		</td>
@@ -524,10 +511,10 @@ function CommaFormatted(amount) {
 	
 	<tr>
 		<td class="boldcell">Total Cost of Stage <a href="" onclick="show('info-t2total'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-t2total" class="more-info">The total cost of the project. This is a sum of the Hardware costs, Software costs, and Resource costs.</div>
+		<div id="info-t2total" style="display:none;">The total cost of the project. This is a sum of the Hardware costs, Software costs, and Resource costs.</div>
 		</td>
 		<td class="boldcell"><!--$409,020.11-->
-		<input type="number" autocorrect="off" autocapitalize="off" name="T2Total" value="" size="4" readonly="readonly" class="readonly">
+		<input type="number" autocorrect="off" autocapitalize="off" name="T2Total" value="" size="4" readonly="readonly">
 		</td>
 		<td>
 		</td>
@@ -539,35 +526,35 @@ function CommaFormatted(amount) {
 			NAME="cmdCalc" 
 			VALUE="Calculate"
 			onClick=cmdCalc_Click2(form)>	
-	<!--</form>-->	
+	</form>	
 	
 	<p>&nbsp;</p>
 	
 <!-- PROCESSING -->
 
-	<!--<form name="processing">-->
-	<table class="costtable" width="740px">
+	<form name="processing">
+	<table class="costtable">
 	<tr>
-		<td class="boldcell" width="60%">Processing
+		<td class="boldcell">Processing
 		</td>
-		<td class="boldcell" width="15%">Metrics
-		</td>
-		<td width="25%">&nbsp;
-		</td>
-	</tr>
-	<tr>
-		<td>Hardware Costs (Equipment, Storage, etc) <a href="" onclick="show('info-t3hardware'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-t3hardware" class="more-info">Equipment, Disk Storage, Hardware needed for this phase of the project.</div>
-		</td>
-		<td><!--$13,274.41-->
-		<input type="number" autocorrect="off" autocapitalize="off" name="T3Hardware" value="" size="4">
+		<td class="boldcell">Metrics
 		</td>
 		<td>
 		</td>
 	</tr>
 	<tr>
+		<td>Hardware Costs (Equipment, Storage, etc) <a href="" onclick="show('info-t3hardware'); return false;"><span class="info-blurb">[?]</span></a>
+		<div id="info-t3hardware" style="display:none;">Equipment, Disk Storage, Hardware needed for this phase of the project.</div>
+		</td>
+		<td><!--$13,274.41-->
+		<input type="number" autocorrect="off" autocapitalize="off" name="T3Hardware" value="" size="4">
+		</td>
+		<td>IT Storage Costs Page
+		</td>
+	</tr>
+	<tr>
 		<td>Software Costs <a href="" onclick="show('info-t3software'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-t3software" class="more-info">The cost of software programs needed for this phase of the project.</div>
+		<div id="info-t3software" style="display:none;">The cost of software programs needed for this phase of the project.</div>
 		</td>
 		<td><!--$28,350.00-->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T3Software" value="" size="4">
@@ -577,37 +564,37 @@ function CommaFormatted(amount) {
 	</tr>
 	<tr>
 		<td>Number of 'Resources' <a href="" onclick="show('info-t3number-of-resources'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-t3number-of-resources" class="more-info">The total number of unique resources (or persons) used for this phase of the project.</div>
+		<div id="info-t3number-of-resources" style="display:none;">The total number of unique resources (or persons) used for this phase of the project.</div>
 		</td>
 		<td><!--7-->
-		<input type="number" autocorrect="off" autocapitalize="off" name="T3NumberOfResources" value="" size="4">
+		<input type="number" autocorrect="off" autocapitalize="off" name="" value="T3NumberOfResources" size="4">
 		</td>
 		<td>
 		</td>
 	</tr>
 	<tr>
-		<td class="boldcell">Total Number of Hours <a href="" onclick="show('info-t3total-number-of-hours'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-t3total-number-of-hours" class="more-info">The total number of hours worked by the resources. This is calculate by multiplying the Total Hours per Month by the Number of Months in Stage.</div>
+		<td>Total Number of Hours <a href="" onclick="show('info-t3total-number-of-hours'); return false;"><span class="info-blurb">[?]</span></a>
+		<div id="info-t3total-number-of-hours" style="display:none;">The total number of hours worked by the resources. This is calculate by multiplying the Total Hours per Month by the Number of Months in Stage.</div>
 		</td>
-		<td class="boldcell"><!--2,984.00-->
-		<input type="number" autocorrect="off" autocapitalize="off" name="T3TotalNumberOfHours" value="" size="4" readonly="readonly" class="readonly">
+		<td><!--2,984.00-->
+		<input type="number" autocorrect="off" autocapitalize="off" name="T3TotalNumberOfHours" value="" size="4" readonly="readonly">
 		</td>
 		<td>
 		</td>
 	</tr>
 	<tr>
-		<td class="boldcell">'Resource' Cost <a href="" onclick="show('info-t3resource-cost'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-t3resource-cost" class="more-info">The total cost of resources for this phase of the project. This is calculated by multiplying the Hourly Rate for Resources by the Total Number of Hours.</div>
+		<td>'Resource' Cost <a href="" onclick="show('info-t3resource-cost'); return false;"><span class="info-blurb">[?]</span></a>
+		<div id="info-t3resource-cost" style="display:none;">The total cost of resources for this phase of the project. This is calculated by multiplying the Hourly Rate for Resources by the Total Number of Hours.</div>
 		</td>
-		<td class="boldcell"><!--$47,361.85-->
-		<input type="number" autocorrect="off" autocapitalize="off" name="T3ResourceCost" value="" size="4" readonly="readonly" class="readonly">
+		<td><!--$47,361.85-->
+		<input type="number" autocorrect="off" autocapitalize="off" name="T3ResourceCost" value="" size="4" readonly="readonly">
 		</td>
 		<td>
 		</td>
 	</tr>
 	<tr>
 		<td>Total Hours per Month <a href="" onclick="show('info-t3total-hours-per-month'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-t3total-hours-per-month" class="more-info">The total number of hours worked by the resources each month for this phase of the project.</div>
+		<div id="info-t3total-hours-per-month" style="display:none;">The total number of hours worked by the resources each month for this phase of the project.</div>
 		</td>
 		<td><!--416.00-->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T3TotalHoursPerMonth" value="" size="4">
@@ -617,17 +604,17 @@ function CommaFormatted(amount) {
 	</tr>
 	<tr>
 		<td>Number of Months in Stage <a href="" onclick="show('info-t3number-of-months-in-stage'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-t3number-of-months-in-stage" class="more-info">The total number of months in this phase of the project.</div>
+		<div id="info-t3number-of-months-in-stage" style="display:none;">The total number of months in this phase of the project.</div>
 		</td>
 		<td><!--17-->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T3NumberOfMonthsInStage" value="" size="4">
 		</td>
-		<td>
+		<td>Based on Salary Report
 		</td>
 	</tr>
 	<tr>
 		<td>Hourly Rate for 'Resources' <a href="" onclick="show('info-t3hourly-rate-for-resources'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-t3hourly-rate-for-resources" class="more-info">The average hourly rate for the resources in this phase of the project.</div>
+		<div id="info-t3hourly-rate-for-resources" style="display:none;">The average hourly rate for the resources in this phase of the project.</div>
 		</td>
 		<td><!--$15.87-->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T3HourlyRateForResources" value="" size="4">
@@ -637,7 +624,7 @@ function CommaFormatted(amount) {
 	</tr>
 	<tr>
 		<td>Total Number of Pages <a href="" onclick="show('info-t3total-number-of-pages'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-t3total-number-of-pages" class="more-info">The total number of pages processed during this phase of the project.</div>
+		<div id="info-t3total-number-of-pages" style="display:none;">The total number of pages processed during this phase of the project.</div>
 		</td>
 		<td><!--62.52-->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T3TotalNumberOfPages" value="" size="4">
@@ -645,32 +632,34 @@ function CommaFormatted(amount) {
 		<td>
 		</td>
 	</tr>
-	<!--<tr>
+
+	<tr>
 		<td>Cost for Processing <a href="" onclick="show('info-t3cost-for-processing'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-t3coat-for-processing" class="more-info">(?)</div>
+		<div id="info-t3coat-for-processing" style="display:none;">(?)</div>
 		</td>
-		<td>
+		<td><!--62.52-->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T3CostForProcessing" value="" size="4">
 		</td>
 		<td>
 		</td>
-	</tr>	-->
+	</tr>	
+	
 	<tr>
-		<td class="boldcell">Cost per Page Processed <a href="" onclick="show('info-t3cost-per-page-processed'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-t3cost-per-page-processed" class="more-info">The cost to process each scanned page. This is calculated by dividing the Total Cost of the Stage by the Total Number of Pages.</div>
+		<td>Cost per Page Processed <a href="" onclick="show('info-t3cost-per-page-processed'); return false;"><span class="info-blurb">[?]</span></a>
+		<div id="info-t3cost-per-page-processed" style="display:none;">The cost to process each scanned page. This is calculated by dividing the Cost for Processing by the Total Number of Pages.</div>
 		</td>
-		<td class="boldcell"><!--0.17-->
-		<input type="number" autocorrect="off" autocapitalize="off" name="T3CostPerPageProcessed" value="" size="4" readonly="readonly" class="readonly">
+		<td><!--0.17-->
+		<input type="number" autocorrect="off" autocapitalize="off" name="T3CostPerPageProcessed" value="" size="4" readonly="readonly">
 		</td>
 		<td>
 		</td>
 	</tr>
 	<tr>
 		<td class="boldcell">Total Cost of Stage <a href="" onclick="show('info-t3total'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-t3total" class="more-info">The total cost of the project. This is a sum of the Hardware costs, Software costs, and Resource costs.</div>
+		<div id="info-t3total" style="display:none;">The total cost of the project. This is a sum of the Hardware costs, Software costs, and Resource costs.</div>
 		</td>
 		<td class="boldcell"><!--$75,711.85-->
-		<input type="number" autocorrect="off" autocapitalize="off" name="T3Total" value="" size="4" readonly="readonly" class="readonly">
+		<input type="number" autocorrect="off" autocapitalize="off" name="T3Total" value="" size="4" readonly="readonly">
 		</td>
 		<td>
 		</td>
@@ -682,25 +671,25 @@ function CommaFormatted(amount) {
 			NAME="cmdCalc" 
 			VALUE="Calculate"
 			onClick=cmdCalc_Click3(form)>	
-	<!--</form>-->
+	</form>
 	
 	<p>&nbsp;</p>
 
 <!-- MAKING THE COLLECTION AVAILABLE-->
 	
-	<!--<form name="making">-->
-	<table class="costtable" width="740px;">
+	<form name="making">
+	<table class="costtable">
 	<tr>
-		<td class="boldcell" width="60%">Making the Collection Available
+		<td class="boldcell">Making the Collection Available
 		</td>
-		<td class="boldcell" width="15%">Metrics
+		<td class="boldcell">Metrics
 		</td>
-		<td width="25%">&nbsp;
+		<td>
 		</td>
 	</tr>
 	<tr>
 		<td>Hardware Costs (Equipment, Storage, etc) <a href="" onclick="show('info-hardware-costs'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-hardware-costs" class="more-info"> Equipment, Disk Storage, Hardware needed for this phase of the project.</div>
+		<div id="info-hardware-costs" style="display:none;"> Equipment, Disk Storage, Hardware needed for this phase of the project.</div>
 		</td>
 		<td><!-- - -->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T4Hardware" value="" size="4">
@@ -710,7 +699,7 @@ function CommaFormatted(amount) {
 	</tr>
 	<tr>
 		<td>Software Costs <a href="" onclick="show('info-software-costs'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-software-costs" class="more-info">The cost of software programs needed for this phase of the project.</div>
+		<div id="info-software-costs" style="display:none;">The cost of software programs needed for this phase of the project.</div>
 		</td>
 		<td><!-- TBD -->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T4Software" value="" size="4">
@@ -720,7 +709,7 @@ function CommaFormatted(amount) {
 	</tr>
 	<tr>
 		<td>Number of 'Resources' <a href="" onclick="show('info-number-of-resources'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-number-of-resources" class="more-info">The total number of unique resources (or persons) used for this phase of the project.</div>
+		<div id="info-number-of-resources" style="display:none;">The total number of unique resources (or persons) used for this phase of the project.</div>
 		</td>
 		<td><!--8-->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T4NumberOfResources" value="" size="4">
@@ -729,28 +718,28 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td class="boldcell">Total Number of Hours <a href="" onclick="show('info-total-number-of-hours'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-total-number-of-hours" class="more-info">The total number of hours worked by the resources. This is calculate by multiplying the Total Hours per Month by the Number of Months in Stage.</div>
+		<td>Total Number of Hours <a href="" onclick="show('info-total-number-of-hours'); return false;"><span class="info-blurb">[?]</span></a>
+		<div id="info-total-number-of-hours" style="display:none;">The total number of hours worked by the resources. This is calculate by multiplying the Total Hours per Month by the Number of Months in Stage.</div>
 		</td>
-		<td class="boldcell"><!--5,651-->
-		<input type="number" autocorrect="off" autocapitalize="off" name="T4TotalNumberOfHours" value="" size="4" readonly="readonly" class="readonly">
+		<td><!--5,651-->
+		<input type="number" autocorrect="off" autocapitalize="off" name="T4TotalNumberOfHours" value="" size="4" readonly="readonly">
 		</td>
 		<td>
 		</td>
 	</tr>
 	<tr>
-		<td class="boldcell">'Resource' Cost <a href="" onclick="show('info-this-resource-cost'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-this-resource-cost" class="more-info">The total cost of resources for this phase of the project. This is calculated by multiplying the Hourly Rate for Resources by the Total Number of Hours.</div>
+		<td>'Resource' Cost <a href="" onclick="show('info-this-resource-cost'); return false;"><span class="info-blurb">[?]</span></a>
+		<div id="info-this-resource-cost" style="display:none;">The total cost of resources for this phase of the project. This is calculated by multiplying the Hourly Rate for Resources by the Total Number of Hours.</div>
 		</td>
-		<td class="boldcell"><!--$101,748.16-->
-		<input type="number" autocorrect="off" autocapitalize="off" name="T4ResourceCost" value="" size="4" readonly="readonly" class="readonly">
+		<td><!--$101,748.16-->
+		<input type="number" autocorrect="off" autocapitalize="off" name="T4ResourceCost" value="" size="4" readonly="readonly">
 		</td>
 		<td>
 		</td>
 	</tr>
 	<tr>
 		<td>Total Hours per Month <a href="" onclick="show('info-total-hours-per-month'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-total-hours-per-month" class="more-info">The total number of hours worked by the resources each month for this phase of the project.</div>
+		<div id="info-total-hours-per-month" style="display:none;">The total number of hours worked by the resources each month for this phase of the project.</div>
 		</td>
 		<td><!--483.00-->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T4TotalHoursPerMonth" value="" size="4">
@@ -760,17 +749,17 @@ function CommaFormatted(amount) {
 	</tr>
 	<tr>
 		<td>Number of Months in Stage <a href="" onclick="show('info-number-of-months-in-stage'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-number-of-months-in-stage" class="more-info">The total number of months in this phase of the project.</div>
+		<div id="info-number-of-months-in-stage" style="display:none;">The total number of months in this phase of the project.</div>
 		</td>
 		<td><!--17-->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T4NumberOfMonthsInStage" value="" size="4">
 		</td>
-		<td>
+		<td>Based on Salary Report
 		</td>
 	</tr>
 	<tr>
 		<td>Hourly Rate for 'Resources' <a href="" onclick="show('info-hourly-rate-for-resources'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-hourly-rate-for-resources" class="more-info">The average hourly rate for the resources in this phase of the project.</div>
+		<div id="info-hourly-rate-for-resources" style="display:none;">The average hourly rate for the resources in this phase of the project.</div>
 		</td>
 		<td><!--$18.01-->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T4HourlyRateForResources" value="" size="4">
@@ -781,10 +770,10 @@ function CommaFormatted(amount) {
 	
 	<tr>
 		<td class="boldcell">Total Cost of Stage <a href="" onclick="show('info-total-cost-of-stage'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-total-cost-of-stage" class="more-info"> The total cost of the project. This is a sum of the Hardware costs, Software costs, and Resource costs.</div>
+		<div id="info-total-cost-of-stage" style="display:none;"> The total cost of the project. This is a sum of the Hardware costs, Software costs, and Resource costs.</div>
 		</td>
 		<td class="boldcell"><!--$101,748.16-->
-		<input type="number" autocorrect="off" autocapitalize="off" name="T4Total" value="" size="4" readonly="readonly" class="readonly">
+		<input type="number" autocorrect="off" autocapitalize="off" name="T4Total" value="" size="7" readonly="readonly">
 		</td>
 		<td>
 		</td>
@@ -796,30 +785,29 @@ function CommaFormatted(amount) {
 			NAME="cmdCalc" 
 			VALUE="Calculate"
 			onClick=cmdCalc_Click4(form)>	
-			
-	<!--</form>-->	
+	</form>	
 
 
 <!-- TOTALS -->
 
 	<p>&nbsp;</p>
 
-	<!--<form name="totals">-->
-	<table class="costtable" width="740px"> 	
+	<form name="totals">
+	<table class="costtable"> 	
 	<tr>
-		<td class="boldcell" width="60%">Total Cost of Project
+		<td class="boldcell leftcell">Total Cost of Project
 		</td>
-		<td class="boldcell" width="15%"><!--$896,030.21-->
-		<input type="number" autocorrect="off" autocapitalize="off" name="T14Total" value="" size="7" readonly="readonly" class="readonly">
+		<td class="boldcell midcell"><!--$896,030.21-->
+		<input type="number" autocorrect="off" autocapitalize="off" name="T14Total" value="" size="7" readonly="readonly">
 		</td>
-		<td width="25%">&nbsp;
+		<td class="rightcell">
 		</td>
 	</tr>
 	<tr>
 		<td class="boldcell">Cost Per Page
 		</td>
 		<td class="boldcell"><!--$2.03-->
- 		<input type="number" autocorrect="off" autocapitalize="off" name="T14CostPerPage" value="" size="7" readonly="readonly" class="readonly">
+ 		<input type="number" autocorrect="off" autocapitalize="off" name="T14PageCost" value="" size="7" readonly="readonly">
 		</td>
 		<td>
 		</td>
@@ -830,14 +818,13 @@ function CommaFormatted(amount) {
 			TYPE="BUTTON"
 			NAME="cmdCalc" 
 			VALUE="Calculate"
-			onClick=cmdCalc_Click5(form)>	
-			
-</form>	
+			onClick=cmdCalc_Click5(document.forms[0][4])>	
+	</form>	
 		
     </div>
-    <!--<footer>
+    <footer>
 	<h3>Footer (Cost Calculator)</h3>
-    </footer>-->
+    </footer>
   </div> <!--! end of #container -->
 
 
