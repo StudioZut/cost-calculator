@@ -92,7 +92,7 @@ function calculatePayment2(form)
 	form.T2NumberOfHours.value = a*b;
 	
 	c=form.T2HourlyRate.value;
-	d=form.T2HoursScanning.value;	
+	d=form.T2NumberOfHours.value;	
 	form.T2ResourceCost.value = c*d;
 	
 	e=form.T2PagesScanned.value;
@@ -140,7 +140,7 @@ function calculatePayment3(form)
 	b=form.T3NumberOfMonthsInStage.value;
 	form.T3TotalNumberOfHours.value = a*b;	
 	
-	e=form.T3CostForProcessing.value;
+	e=form.T3Total.value;
 	f=form.T3TotalNumberOfPages.value;
 	form.T3CostPerPageProcessed.value = e/f;
 	
@@ -657,7 +657,7 @@ function CommaFormatted(amount) {
 	</tr>	-->
 	<tr>
 		<td class="boldcell">Cost per Page Processed <a href="" onclick="show('info-t3cost-per-page-processed'); return false;"><span class="info-blurb">[?]</span></a>
-		<div id="info-t3cost-per-page-processed" class="more-info">The cost to process each scanned page. This is calculated by dividing the Cost for Processing by the Total Number of Pages.</div>
+		<div id="info-t3cost-per-page-processed" class="more-info">The cost to process each scanned page. This is calculated by dividing the Total Cost of the Stage by the Total Number of Pages.</div>
 		</td>
 		<td class="boldcell"><!--0.17-->
 		<input type="number" autocorrect="off" autocapitalize="off" name="T3CostPerPageProcessed" value="" size="4" readonly="readonly" class="readonly">

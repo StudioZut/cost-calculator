@@ -92,7 +92,7 @@ function calculatePayment2(form)
 	form.T2NumberOfHours.value = a*b;
 	
 	c=form.T2HourlyRate.value;
-	d=form.T2HoursScanning.value;	
+	d=form.T2NumberOfHours.value;	
 	form.T2ResourceCost.value = c*d;
 	
 	e=form.T2PagesScanned.value;
@@ -133,7 +133,7 @@ function cmdCalc_Click3(form)
 function calculatePayment3(form)
 {	
 	c=form.T3HourlyRateForResources.value;
-	d=form.T3NumberOfMonthsInStage.value;	
+	d=form.T3TotalNumberOfHours.value;	
 	form.T3ResourceCost.value = c*d;
 	
 	a=form.T3TotalHoursPerMonth.value;
