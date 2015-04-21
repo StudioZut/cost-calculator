@@ -24,6 +24,8 @@
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">-->
 
+  <!-- font awesome -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   <!-- CSS: implied media="all" -->
   <link rel="stylesheet" href="css/style.css?v=2">
@@ -267,7 +269,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Hardware Costs (Equipment, Storage, etc) <a href="" onclick="show('info-hardware'); return false;">[?]</a>
+		<td>Hardware Costs (Equipment, Storage, etc) <a href="" onclick="show('info-hardware'); return false;"><i class="fa fa-question-circle"></i></a>
 		<div id="info-hardware" class="more-info">Equipment, Disk Storage, Hardware needed for this phase of the project.</div>
 		</td>
 		<td><!-- TBD -->
@@ -277,7 +279,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Software Costs <a href="" onclick="show('info-software'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Software Costs <a href="" onclick="show('info-software'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-software" class="more-info">The cost of software programs needed for this phase of the project</div>
 		</td>
 		<td><!-- TBD -->
@@ -287,7 +289,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Number of 'Resources <a href="" onclick="show('info-resource-number'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Number of 'Resources <a href="" onclick="show('info-resource-number'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-resource-number" class="more-info">The total number of unique resources (or persons) used for this phase of the project.</div>
 		</td>
 		<td><!--23-->
@@ -297,7 +299,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td class="boldcell">Total Number of Hours <a href="" onclick="show('info-hours-number'); return false;"><span class="info-blurb">[?]</span></a>
+		<td class="boldcell">Total Number of Hours <a href="" onclick="show('info-hours-number'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-hours-number" class="more-info">The total number of hours worked by the resources. This is calculate by multiplying the Total Hours per Month by the Number of Months in Stage.</div>
 		</td>
 		<td class="boldcell"><!--8,745-->
@@ -307,7 +309,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td class="boldcell">'Resource' Cost <a href="" onclick="show('info-resource-cost'); return false;"><span class="info-blurb">[?]</span></a>
+		<td class="boldcell">'Resource' Cost <a href="" onclick="show('info-resource-cost'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-resource-cost" class="more-info">The total cost of resources for this phase of the project. This is calculated by multiplying the Hourly Rate for Resources by the Total Number of Hours.</div>
 		</td>
 		<td class="boldcell"><!--$309,550.09-->
@@ -317,7 +319,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Total Hours per Month <a href="" onclick="show('info-total-hours'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Total Hours per Month <a href="" onclick="show('info-total-hours'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-total-hours" class="more-info">The total number of hours worked by the resources each month for this phase of the project.</div>
 		</td>
 		<td><!--1,221-->
@@ -327,7 +329,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Number of Months in Stage <a href="" onclick="show('info-months'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Number of Months in Stage <a href="" onclick="show('info-months'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-months" class="more-info">The total number of months in this phase of the project.</div>
 		</td>
 		<td><!--28-->
@@ -337,7 +339,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Hourly Rate for 'Resources' <a href="" onclick="show('info-resources-hourly'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Hourly Rate for 'Resources' <a href="" onclick="show('info-resources-hourly'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-resources-hourly" class="more-info">The average hourly rate for the resources in this phase of the project.</div>
 		</td>
 		<td><!--$35.40-->
@@ -347,7 +349,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td class="boldcell">Cost for Project Planning <a href="" onclick="show('info-costs-planning'); return false;"><span class="info-blurb">[?]</span></a>
+		<td class="boldcell">Cost for Project Planning <a href="" onclick="show('info-costs-planning'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-costs-planning" class="more-info">The total cost of the project. This is a sum of the Hardware costs, Software costs, and Resource costs.</div>
 		</td>
 		<td class="boldcell"><!--$309,550.09-->
@@ -381,7 +383,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Hardware Costs (Equipment, Storage, etc) <a href="" onclick="show('info-costs-t2hardware'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Hardware Costs (Equipment, Storage, etc) <a href="" onclick="show('info-costs-t2hardware'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-costs-t2hardware" class="more-info">Equipment, Disk Storage, Hardware needed for this phase of the project.</div>
 		</td>
 		<td><!--$369,084.11-->
@@ -391,7 +393,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Software Costs  <a href="" onclick="show('info-costs-t2software'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Software Costs  <a href="" onclick="show('info-costs-t2software'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-costs-t2software" class="more-info">The cost of software programs needed for this phase of the project.</div>
 		</td>
 		<td><!-- n/a -->
@@ -401,7 +403,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Number of 'Resources' <a href="" onclick="show('info-t2resources'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Number of 'Resources' <a href="" onclick="show('info-t2resources'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-t2resources" class="more-info">The total number of unique resources (or persons) used for this phase of the project.</div>
 		</td>
 		<td><!--3-->
@@ -411,7 +413,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td class="boldcell">Total Number of Hours <a href="" onclick="show('info-t2hours'); return false;"><span class="info-blurb">[?]</span></a>
+		<td class="boldcell">Total Number of Hours <a href="" onclick="show('info-t2hours'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-t2hours" class="more-info">The total number of hours worked by the resources. This is calculate by multiplying the Total Hours per Month by the Number of Months in Stage.</div>
 		</td>
 		<td class="boldcell"><!--2,400-->
@@ -421,7 +423,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td class="boldcell">'Resource' Cost <a href="" onclick="show('info-costs-t2resources'); return false;"><span class="info-blurb">[?]</span></a>
+		<td class="boldcell">'Resource' Cost <a href="" onclick="show('info-costs-t2resources'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-costs-t2resources" class="more-info">The total cost of resources for this phase of the project. This is calculated by multiplying the Hourly Rate for Resources by the Total Number of Hours.</div>
 		</td>
 		<td class="boldcell"><!--$39,936.00-->
@@ -431,7 +433,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Total Hours per Month <a href="" onclick="show('info-total-t2hours'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Total Hours per Month <a href="" onclick="show('info-total-t2hours'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-total-t2hours" class="more-info">The total number of hours worked by the resources each month for this phase of the project.</div>
 		</td>
 		<td><!--480.00-->
@@ -441,7 +443,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Number of Months in Stage <a href="" onclick="show('info-t2months'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Number of Months in Stage <a href="" onclick="show('info-t2months'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-t2months" class="more-info">The total number of months in this phase of the project.</div>
 		</td>
 		<td><!--17-->
@@ -451,7 +453,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Hourly Rate for 'Resources' <a href="" onclick="show('info-rate-t2resources'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Hourly Rate for 'Resources' <a href="" onclick="show('info-rate-t2resources'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-rate-t2resources" class="more-info">The average hourly rate for the resources in this phase of the project.</div>
 		</td>
 		<td><!--$16.64-->
@@ -462,7 +464,7 @@ function CommaFormatted(amount) {
 	</tr>
 	
 	<tr>
-		<td>Number of Hours Scanning per day <a href="" onclick="show('info-hours-t2scanning'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Number of Hours Scanning per day <a href="" onclick="show('info-hours-t2scanning'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-hours-t2scanning" class="more-info">The number of hours spent each day on scanning books. This may be based on scan production reports provided by your scanning equipment.</div>
 		</td>
 		<td><!--8-->
@@ -472,7 +474,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>	
 	<tr>
-		<td>Pages Scanned per Hour per Operator <a href="" onclick="show('info-t2perhour'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Pages Scanned per Hour per Operator <a href="" onclick="show('info-t2perhour'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-t2perhour" class="more-info">The number of pages scanned each hour. This may be based on scan production reports provided by your scanning equipment.</div>
 		</td>
 		<td><!--592.59-->
@@ -482,7 +484,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Average Book Size <a href="" onclick="show('info-t2booksize'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Average Book Size <a href="" onclick="show('info-t2booksize'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-t2booksize" class="more-info">The average size of the scanned books. This may be based on scan production reports provided by your scanning equipment.</div>
 		</td>
 		<td><!--400-->
@@ -492,7 +494,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td class="boldcell">Books Scanned per Hour per Operator <a href="" onclick="show('info-t2perop'); return false;"><span class="info-blurb">[?]</span></a>
+		<td class="boldcell">Books Scanned per Hour per Operator <a href="" onclick="show('info-t2perop'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-t2perop" class="more-info"> The number of books scanned each hour. This is calculated by dividing the Pages Scanned per Hour per Operator by the Average Book Size.</div>
 		</td>
 		<td class="boldcell"><!--1.48-->
@@ -502,7 +504,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>	
 	<tr>
-		<td class="boldcell">Books Scanned per Day <a href="" onclick="show('info-t2booksperday'); return false;"><span class="info-blurb">[?]</span></a>
+		<td class="boldcell">Books Scanned per Day <a href="" onclick="show('info-t2booksperday'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-t2booksperday" class="more-info">The number of books scanned each day. This is calculated by multiplying the Books Scanned per Hour per Operator by the Number of Hours Scanning per Day. The resulting number is then multiplied by the Number of Resources for this phase of the project.</div>
 		</td>
 		<td class="boldcell"><!--35.56-->
@@ -512,7 +514,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td class="boldcell">Cost per Book scanned <a href="" onclick="show('info-t2costperbook'); return false;"><span class="info-blurb">[?]</span></a>
+		<td class="boldcell">Cost per Book scanned <a href="" onclick="show('info-t2costperbook'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-t2costperbook" class="more-info">The cost of scanning each book during this phase of the project. This is calculated by multiplying Books Scanned per Day times the Number of Resources. The resulting number is then divided by Books Scanned per Hour per Operator.</div>
 		</td>
 		<td class="boldcell"><!--72.00-->
@@ -523,7 +525,7 @@ function CommaFormatted(amount) {
 	</tr>
 	
 	<tr>
-		<td class="boldcell">Total Cost of Stage <a href="" onclick="show('info-t2total'); return false;"><span class="info-blurb">[?]</span></a>
+		<td class="boldcell">Total Cost of Stage <a href="" onclick="show('info-t2total'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-t2total" class="more-info">The total cost of the project. This is a sum of the Hardware costs, Software costs, and Resource costs.</div>
 		</td>
 		<td class="boldcell"><!--$409,020.11-->
@@ -556,7 +558,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Hardware Costs (Equipment, Storage, etc) <a href="" onclick="show('info-t3hardware'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Hardware Costs (Equipment, Storage, etc) <a href="" onclick="show('info-t3hardware'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-t3hardware" class="more-info">Equipment, Disk Storage, Hardware needed for this phase of the project.</div>
 		</td>
 		<td><!--$13,274.41-->
@@ -566,7 +568,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Software Costs <a href="" onclick="show('info-t3software'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Software Costs <a href="" onclick="show('info-t3software'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-t3software" class="more-info">The cost of software programs needed for this phase of the project.</div>
 		</td>
 		<td><!--$28,350.00-->
@@ -576,7 +578,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Number of 'Resources' <a href="" onclick="show('info-t3number-of-resources'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Number of 'Resources' <a href="" onclick="show('info-t3number-of-resources'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-t3number-of-resources" class="more-info">The total number of unique resources (or persons) used for this phase of the project.</div>
 		</td>
 		<td><!--7-->
@@ -586,7 +588,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td class="boldcell">Total Number of Hours <a href="" onclick="show('info-t3total-number-of-hours'); return false;"><span class="info-blurb">[?]</span></a>
+		<td class="boldcell">Total Number of Hours <a href="" onclick="show('info-t3total-number-of-hours'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-t3total-number-of-hours" class="more-info">The total number of hours worked by the resources. This is calculate by multiplying the Total Hours per Month by the Number of Months in Stage.</div>
 		</td>
 		<td class="boldcell"><!--2,984.00-->
@@ -596,7 +598,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td class="boldcell">'Resource' Cost <a href="" onclick="show('info-t3resource-cost'); return false;"><span class="info-blurb">[?]</span></a>
+		<td class="boldcell">'Resource' Cost <a href="" onclick="show('info-t3resource-cost'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-t3resource-cost" class="more-info">The total cost of resources for this phase of the project. This is calculated by multiplying the Hourly Rate for Resources by the Total Number of Hours.</div>
 		</td>
 		<td class="boldcell"><!--$47,361.85-->
@@ -606,7 +608,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Total Hours per Month <a href="" onclick="show('info-t3total-hours-per-month'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Total Hours per Month <a href="" onclick="show('info-t3total-hours-per-month'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-t3total-hours-per-month" class="more-info">The total number of hours worked by the resources each month for this phase of the project.</div>
 		</td>
 		<td><!--416.00-->
@@ -616,7 +618,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Number of Months in Stage <a href="" onclick="show('info-t3number-of-months-in-stage'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Number of Months in Stage <a href="" onclick="show('info-t3number-of-months-in-stage'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-t3number-of-months-in-stage" class="more-info">The total number of months in this phase of the project.</div>
 		</td>
 		<td><!--17-->
@@ -626,7 +628,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Hourly Rate for 'Resources' <a href="" onclick="show('info-t3hourly-rate-for-resources'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Hourly Rate for 'Resources' <a href="" onclick="show('info-t3hourly-rate-for-resources'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-t3hourly-rate-for-resources" class="more-info">The average hourly rate for the resources in this phase of the project.</div>
 		</td>
 		<td><!--$15.87-->
@@ -636,7 +638,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Total Number of Pages <a href="" onclick="show('info-t3total-number-of-pages'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Total Number of Pages <a href="" onclick="show('info-t3total-number-of-pages'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-t3total-number-of-pages" class="more-info">The total number of pages processed during this phase of the project.</div>
 		</td>
 		<td><!--62.52-->
@@ -646,7 +648,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<!--<tr>
-		<td>Cost for Processing <a href="" onclick="show('info-t3cost-for-processing'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Cost for Processing <a href="" onclick="show('info-t3cost-for-processing'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-t3coat-for-processing" class="more-info">(?)</div>
 		</td>
 		<td>
@@ -656,7 +658,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>	-->
 	<tr>
-		<td class="boldcell">Cost per Page Processed <a href="" onclick="show('info-t3cost-per-page-processed'); return false;"><span class="info-blurb">[?]</span></a>
+		<td class="boldcell">Cost per Page Processed <a href="" onclick="show('info-t3cost-per-page-processed'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-t3cost-per-page-processed" class="more-info">The cost to process each scanned page. This is calculated by dividing the Total Cost of the Stage by the Total Number of Pages.</div>
 		</td>
 		<td class="boldcell"><!--0.17-->
@@ -666,7 +668,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td class="boldcell">Total Cost of Stage <a href="" onclick="show('info-t3total'); return false;"><span class="info-blurb">[?]</span></a>
+		<td class="boldcell">Total Cost of Stage <a href="" onclick="show('info-t3total'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-t3total" class="more-info">The total cost of the project. This is a sum of the Hardware costs, Software costs, and Resource costs.</div>
 		</td>
 		<td class="boldcell"><!--$75,711.85-->
@@ -699,7 +701,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Hardware Costs (Equipment, Storage, etc) <a href="" onclick="show('info-hardware-costs'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Hardware Costs (Equipment, Storage, etc) <a href="" onclick="show('info-hardware-costs'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-hardware-costs" class="more-info"> Equipment, Disk Storage, Hardware needed for this phase of the project.</div>
 		</td>
 		<td><!-- - -->
@@ -709,7 +711,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Software Costs <a href="" onclick="show('info-software-costs'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Software Costs <a href="" onclick="show('info-software-costs'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-software-costs" class="more-info">The cost of software programs needed for this phase of the project.</div>
 		</td>
 		<td><!-- TBD -->
@@ -719,7 +721,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Number of 'Resources' <a href="" onclick="show('info-number-of-resources'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Number of 'Resources' <a href="" onclick="show('info-number-of-resources'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-number-of-resources" class="more-info">The total number of unique resources (or persons) used for this phase of the project.</div>
 		</td>
 		<td><!--8-->
@@ -729,7 +731,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td class="boldcell">Total Number of Hours <a href="" onclick="show('info-total-number-of-hours'); return false;"><span class="info-blurb">[?]</span></a>
+		<td class="boldcell">Total Number of Hours <a href="" onclick="show('info-total-number-of-hours'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-total-number-of-hours" class="more-info">The total number of hours worked by the resources. This is calculate by multiplying the Total Hours per Month by the Number of Months in Stage.</div>
 		</td>
 		<td class="boldcell"><!--5,651-->
@@ -739,7 +741,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td class="boldcell">'Resource' Cost <a href="" onclick="show('info-this-resource-cost'); return false;"><span class="info-blurb">[?]</span></a>
+		<td class="boldcell">'Resource' Cost <a href="" onclick="show('info-this-resource-cost'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-this-resource-cost" class="more-info">The total cost of resources for this phase of the project. This is calculated by multiplying the Hourly Rate for Resources by the Total Number of Hours.</div>
 		</td>
 		<td class="boldcell"><!--$101,748.16-->
@@ -749,7 +751,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Total Hours per Month <a href="" onclick="show('info-total-hours-per-month'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Total Hours per Month <a href="" onclick="show('info-total-hours-per-month'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-total-hours-per-month" class="more-info">The total number of hours worked by the resources each month for this phase of the project.</div>
 		</td>
 		<td><!--483.00-->
@@ -759,7 +761,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Number of Months in Stage <a href="" onclick="show('info-number-of-months-in-stage'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Number of Months in Stage <a href="" onclick="show('info-number-of-months-in-stage'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-number-of-months-in-stage" class="more-info">The total number of months in this phase of the project.</div>
 		</td>
 		<td><!--17-->
@@ -769,7 +771,7 @@ function CommaFormatted(amount) {
 		</td>
 	</tr>
 	<tr>
-		<td>Hourly Rate for 'Resources' <a href="" onclick="show('info-hourly-rate-for-resources'); return false;"><span class="info-blurb">[?]</span></a>
+		<td>Hourly Rate for 'Resources' <a href="" onclick="show('info-hourly-rate-for-resources'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-hourly-rate-for-resources" class="more-info">The average hourly rate for the resources in this phase of the project.</div>
 		</td>
 		<td><!--$18.01-->
@@ -780,7 +782,7 @@ function CommaFormatted(amount) {
 	</tr>
 	
 	<tr>
-		<td class="boldcell">Total Cost of Stage <a href="" onclick="show('info-total-cost-of-stage'); return false;"><span class="info-blurb">[?]</span></a>
+		<td class="boldcell">Total Cost of Stage <a href="" onclick="show('info-total-cost-of-stage'); return false;"><span class="info-blurb"><i class="fa fa-question-circle"></i></span></a>
 		<div id="info-total-cost-of-stage" class="more-info"> The total cost of the project. This is a sum of the Hardware costs, Software costs, and Resource costs.</div>
 		</td>
 		<td class="boldcell"><!--$101,748.16-->
